@@ -1,0 +1,73 @@
+.dictionary-container {
+    max-width: 1200px;
+    margin: auto;
+    padding: 20px;
+}
+
+.dictionary-container h2 {
+    text-align: center;
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.dictionary-container ul {
+    list-style: none;
+    padding: 0;
+}
+
+.dictionary-container li {
+    padding: 10px;
+    margin-bottom: 10px;
+    border-bottom: 1px solid #ccc;
+    align-items: center;
+    display: flex;
+}
+
+.dictionary-container strong {
+    margin-right: 10px;
+    font-size: 1.2em;
+    white-space: nowrap; /* Prevents the word from breaking into multiple lines */
+}
+
+.dictionary-container li p {
+    margin: 0;
+    color: #555;
+}
+
+.dictionary-container a {
+    background-color: #007bff;
+    color: #fff;
+    padding: 5px 10px;
+    text-decoration: none;
+    border-radius: 5px;
+    transition: background-color 0.3s;
+}
+
+.dictionary-container a:hover {
+    background-color: #0056b3;
+}
+
+.dictionary-header {
+  display: flex;
+  align-items: baseline;
+  justify-content: center;
+  text-align: left;
+  margin-bottom: 20px;
+  position: relative; /* Position relative for z-index to work */
+}
+
+.dictionary-logo {
+  height: 3em;
+  margin-right: -0.65em;
+  position: relative;
+  top: 0.6em; /* Adjust this value to align the logo and text vertically */
+  z-index: -1; /* This will place the logo behind the text */
+}
+
+.search-bar {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 20px;
+  font-size: 16px;
+}
+

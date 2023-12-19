@@ -1,0 +1,27 @@
+.home-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100vh; /* This ensures it takes up the full viewport height */
+    text-align: center;
+    min-height: 80vh; /* adjust as needed */
+    margin-top: -50px; /* adjust as needed */
+}
+
+.home-container a {
+    color: #007bff; /* Bootstrap's default blue. Adjust if you're using a different theme */
+    text-decoration: none;
+    margin: 0 5px;
+}
+
+.home-container a:hover {
+    text-decoration: underline;
+}
+
+.home-logo {
+    width: 500px;
+    height: auto;
+    position: relative;
+    top: -40px; /* adjust as needed */
+}

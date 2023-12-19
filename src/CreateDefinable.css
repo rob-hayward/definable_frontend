@@ -1,0 +1,71 @@
+.form-container {
+    width: 700px; /* Adjust the width of the yellow square */
+    height: 400px; /* Adjust the height of the yellow square */
+    background-color: rgb(250,232,0); /* Yellow color */
+    margin: 50px auto; /* Center the form-container horizontally and give some top and bottom spacing */
+    display: flex;
+    justify-content: center;
+    align-items: center; /* This will center the form-content inside the form-container */
+}
+
+.form-content {
+    width: 80%;
+    padding: 20px;
+    display: flex; /* Added this */
+    flex-direction: column; /* Added this */
+    align-items: center; /* Added this */
+}
+
+.form-layout {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    gap: 10px; /* Spacing between elements */
+}
+
+.create-definable-form input,
+.create-definable-form textarea {
+    flex: 1;
+    max-width: calc(50% - 80px);
+}
+
+.black-dots-image {
+    height: 30px; /* Adjust this based on the size of your image */
+}
+
+form button {
+    background-color: #333;
+    color: #fff;
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+    width: 100%;
+    margin-top: 20px; /* Space above the button */
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
+}
+
+form input,
+form textarea,
+form button {
+    width: 300px; /* Or whatever width you want for the form elements */
+    padding: 10px;
+    margin: 5px 0; /* Spacing between form elements */
+    font-size: 16px;
+}
+
+
+
+form button:hover {
+    background-color: #555;
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+}

@@ -1,0 +1,67 @@
+.dashboard-options {
+    display: flex;
+    justify-content: space-between;
+    gap: 2rem; /* Provide some spacing between the options */
+}
+
+.option {
+    flex: 1;
+    background-color: rgb(250, 232, 0); /* You can change this to any desired color */
+    padding: 1rem;
+    border-radius: 8px;
+    box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+button {
+    margin-top: 1rem;
+    background-color: #007bff;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+    text-align: center;
+    display: inline-block;
+}
+
+h2 {
+    text-align: center;
+    margin-bottom: 1rem;
+    color: black;
+}
+
+.logo-container {
+    color: #007bff; /* Bootstrap's default blue. Adjust if you're using a different theme */
+    text-decoration: none;
+    margin: 0 5px;
+    text-align: center;
+}
+
+.dashboard-container {
+    max-width: 1200px;  /* Or any other desired width */
+    margin-left: auto;
+    margin-right: auto;
+    padding: 0 20px;  /* Introduce 20px padding on the sides for smaller screens */
+}
+
+.logo-image {
+    width: 400px;
+    height: auto;
+}
+
+.option button {
+    background-color: #333; /* Dark grey background */
+    color: #fff; /* White text */
+    cursor: pointer;
+    border: none;
+    transition: background-color 0.3s;
+    width: 50%;
+    padding: 10px 20px; /* Adding some padding for better visual appearance */
+    border-radius: 4px; /* Optional: for rounded corners */
+    margin-top: 20px; /* Space above the button */
+}
+
+.option button:hover {
+    background-color: #555; /* Slightly lighter grey for hover effect */
+}
