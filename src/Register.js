@@ -21,37 +21,47 @@ function Register() {
 
        // Handle registration form submission
     const handleSubmit = async (e) => {
-        e.preventDefault();
-        try {
-            const payload = {
-                username,
-                email,
-                password1: password,
-                password2: passwordConfirm,
-            };
-            // Update the URL to match Django's registration endpoint
-            const response = await axiosInstance.post('/auth/registration/', payload, {
-                headers: {
-                    Authorization: undefined  // Remove Authorization header for registration request
-                }
-            });
-            console.log(response.data);
-            setMessage("Successfully registered!");
-            setIsSuccess(true);
-            login();
+    e.preventDefault();
+    try {
+        const registrationPayload = {
+            username,
+            email,
+            password1: password,
+            password2: passwordConfirm,
+        };
 
-            navigate('/dashboard');
+        // First, try to register the user
+        await axiosInstance.post('/auth/registration/', registrationPayload, {
+            headers: { Authorization: undefined }
+        });
 
-        } catch (error) {
-            console.error("Error during registration:", error);
-            if (error.response && error.response.data) {
-                setMessage(error.response.data.detail || "An error occurred during registration. Please try again.");
-            } else {
-                setMessage("An unexpected error occurred. Please try again.");
-            }
-            setIsSuccess(false);
+        // If registration is successful, immediately log the user in
+        const loginPayload = {
+            username,
+            password,
+        };
+
+        const loginResponse = await axiosInstance.post('/auth/jwt/create/', loginPayload);
+
+        // Store the token and update authentication state
+        localStorage.setItem('access_token', loginResponse.data.access);
+        axiosInstance.defaults.headers.common['Authorization'] = `Bearer ${loginResponse.data.access}`;
+        login();  // Update the auth context to reflect that the user is logged in
+        setMessage("Successfully registered and logged in!");
+        setIsSuccess(true);
+        navigate('/dashboard');
+
+    } catch (error) {
+        console.error("Error during registration or login:", error);
+        if (error.response && error.response.data) {
+            setMessage(error.response.data.detail || "An error occurred. Please try again.");
+        } else {
+            setMessage("An unexpected error occurred. Please try again.");
         }
+        setIsSuccess(false);
     }
+};
+
 
     // Render registration form
     return (

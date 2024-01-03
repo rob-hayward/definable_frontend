@@ -1,3 +1,4 @@
+// CreateDefinable.js
 import React, { useState } from 'react';
 import { useNavigate } from 'react-router-dom';  // Import useNavigate
 import axiosInstance from './axiosConfig';
@@ -32,6 +33,7 @@ function CreateDefinable() {
             setMessage('An error occurred: ' + (error.response?.data.detail || error.message));
         });
     };
+
 
     return (
         <div>

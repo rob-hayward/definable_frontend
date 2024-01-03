@@ -1,38 +1,45 @@
+/* CreateDefinable.css */
 .form-container {
-    width: 700px; /* Adjust the width of the yellow square */
-    height: 400px; /* Adjust the height of the yellow square */
-    background-color: rgb(250,232,0); /* Yellow color */
-    margin: 50px auto; /* Center the form-container horizontally and give some top and bottom spacing */
+    width: 700px;
+    background-color: rgb(250, 232, 0);
+    margin: 50px auto;
     display: flex;
     justify-content: center;
-    align-items: center; /* This will center the form-content inside the form-container */
+    align-items: center;
+    padding: 20px;
 }
 
 .form-content {
-    width: 80%;
-    padding: 20px;
-    display: flex; /* Added this */
-    flex-direction: column; /* Added this */
-    align-items: center; /* Added this */
-}
-
-.form-layout {
     width: 100%;
     display: flex;
-    flex-wrap: wrap;
-    justify-content: center;
+    flex-direction: column;
     align-items: center;
-    gap: 10px; /* Spacing between elements */
 }
 
-.create-definable-form input,
+.create-definable-form {
+    width: 100%;
+}
+
+.create-definable-form input[type="text"] {
+    width: 50%; /* Set width to 50% for the word input */
+    margin-bottom: 20px;
+}
+
 .create-definable-form textarea {
-    flex: 1;
-    max-width: calc(50% - 80px);
+    width: 100%; /* Full width for definition textarea */
+    margin-bottom: 20px;
 }
 
 .black-dots-image {
-    height: 30px; /* Adjust this based on the size of your image */
+    height: 30px;
+    margin-left: 10px; /* Move the image to the right */
+    display: inline-block; /* This ensures that the image aligns with the input */
+    vertical-align: middle; /* Aligns the image vertically with the input */
+}
+
+.error-message {
+    color: red;
+    margin-bottom: 10px;
 }
 
 form button {
@@ -41,25 +48,11 @@ form button {
     cursor: pointer;
     border: none;
     transition: background-color 0.3s;
-    width: 100%;
-    margin-top: 20px; /* Space above the button */
-}
-
-.error-message {
-    color: red;
-    margin-bottom: 10px;
-}
-
-form input,
-form textarea,
-form button {
-    width: 300px; /* Or whatever width you want for the form elements */
+    width: 50%; /* Reduce the button size to 50% */
     padding: 10px;
-    margin: 5px 0; /* Spacing between form elements */
-    font-size: 16px;
+    margin: 20px auto; /* Center the button */
+    display: block; /* Needed for margin auto to work */
 }
-
-
 
 form button:hover {
     background-color: #555;
@@ -67,5 +60,5 @@ form button:hover {
 
 h2 {
     text-align: center;
-    margin-top: 20px;
+    margin-bottom: 20px;
 }
