@@ -43,7 +43,8 @@ function Dashboard() {
                     {/* Option 2 */}
                     <div className="option">
                         <h2>Write Dictionary</h2>
-                        <p>Denfinable is written by other people, just like you. Please help to create the best dictionary in existence.</p>
+                        <p>Denfinable is written by people just like you. <br/> Please help to create the best
+                            dictionary in existence.</p>
                         <Link to="/dashboard/create_definable">
                             <button>Define a Word</button>
                         </Link>
